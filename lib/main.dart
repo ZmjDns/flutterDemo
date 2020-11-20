@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         textDirection: TextDirection.ltr,
         style: TextStyle(
           color: Colors.blue,
-          fontSize: 20
+          fontSize: 50
         ),
       ),
     );
