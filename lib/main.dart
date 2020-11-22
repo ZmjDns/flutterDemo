@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'home.dart';
 
@@ -40,15 +41,36 @@ class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        'Hello Flutter',
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-          // color: Colors.blue,
-            color: Color.fromRGBO(244, 233, 15, 0.5),
-            fontSize: 40
+      child: Container(
+        child: Text(
+          '我是一个文本,我是一个文本,我是一个文本,我是一个文本,我是一个文本,我是一个文本,我是一个文本,',
+          textAlign: TextAlign.left,
+          overflow: TextOverflow.ellipsis,
+          textScaleFactor: 2,
+          maxLines: 3,
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.deepOrange,
+            fontStyle: FontStyle.italic,
+            decoration: TextDecoration.lineThrough,
+            decorationColor: Colors.deepPurple,
+            decorationStyle: TextDecorationStyle.dashed,
+            letterSpacing: 5
+          ),
         ),
-      ),
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+          color: Colors.yellow,
+          border: Border.all(
+            color: Colors.deepOrange,
+            width: 5.0
+          ),
+          borderRadius: BorderRadius.all(
+            Radius.circular(10.0)
+          )
+        ),
+      )
     );
   }
 
