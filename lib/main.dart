@@ -27,7 +27,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Demo'),
         ),
-        body: ImageContainer()//HomeContent(),
+        body: BorderRadiusImage()//ImageContainer()
+          //HomeContent(),
       ),
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
@@ -103,6 +104,62 @@ class ImageContainer extends StatelessWidget {
         height: 300,
         decoration: BoxDecoration(
           color: Colors.yellowAccent
+        ),
+      ),
+    );
+  }
+
+}
+
+/**
+ * 圆角图片
+ */
+class BorderRadiusImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ClipRadius()//BorderRadiusContainer(),
+    );
+  }
+}
+/**
+ * 处理圆角图片
+ */
+class BorderRadiusContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 300,
+      decoration: BoxDecoration(
+        color: Colors.tealAccent,
+        //borderRadius: BorderRadius.all(Radius.circular(10.0))
+        borderRadius: BorderRadius.circular(20.0),
+
+        image: DecorationImage(
+          image: NetworkImage('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1830914723,3154965800&fm=26&gp=0.jpg'),
+          fit: BoxFit.cover
+        )
+        //borderRadius:
+      ),
+    );
+  }
+}
+/**
+ * 处理圆形图片
+ */
+class ClipRadius extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 300,
+      child: ClipOval(
+        child: Image.network(
+          'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1830914723,3154965800&fm=26&gp=0.jpg',
+          width: 200,
+          height: 200,
+          fit: BoxFit.cover,
         ),
       ),
     );
