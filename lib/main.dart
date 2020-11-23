@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Demo'),
         ),
-        body: HomeContent(),
+        body: ImageContainer()//HomeContent(),
       ),
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
@@ -79,6 +79,32 @@ class HomeContent extends StatelessWidget {
 
         alignment: Alignment.bottomLeft,
       )
+    );
+  }
+}
+
+class ImageContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        child: Image.network(
+          'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1141259048,554497535&fm=26&gp=0.jpg',
+          alignment: Alignment.centerLeft,
+
+          // color: Colors.yellowAccent,
+          // colorBlendMode: BlendMode.modulate, //混合颜色
+
+          fit: BoxFit.cover,
+
+          //repeat: ImageRepeat.repeatX,//沿着x轴平铺
+        ),
+        width: 300,
+        height: 300,
+        decoration: BoxDecoration(
+          color: Colors.yellowAccent
+        ),
+      ),
     );
   }
 
