@@ -70,6 +70,14 @@ class HomeContent extends StatelessWidget {
             Radius.circular(10.0)
           )
         ),
+
+        //padding: EdgeInsets.all(20),
+        padding: EdgeInsets.fromLTRB(5, 10, 5, 0),
+
+        //transform: Matrix4.translationValues(0, 100, 0),
+        //transform: Matrix4.rotationZ(0.3),
+
+        alignment: Alignment.bottomLeft,
       )
     );
   }
