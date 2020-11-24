@@ -118,7 +118,7 @@ class BorderRadiusImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ClipRadius()//BorderRadiusContainer(),
+      child: LocalImage()//ClipRadius()//BorderRadiusContainer(),
     );
   }
 }
@@ -161,6 +161,25 @@ class ClipRadius extends StatelessWidget {
           height: 200,
           fit: BoxFit.cover,
         ),
+      ),
+    );
+  }
+
+}
+
+class LocalImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 300,
+      decoration: BoxDecoration(
+        color: Colors.tealAccent,
+        borderRadius: BorderRadius.circular(5.0)
+      ),
+      child: Image.asset(
+        'images/a.jpg',
+        fit: BoxFit.cover,
       ),
     );
   }
