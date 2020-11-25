@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class TestLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListComp2(),//ListComp1(),
+      child: ListComp3()//ListComp2(),//ListComp1(),
     );
   }
 }
@@ -149,4 +150,81 @@ class ListComp2 extends StatelessWidget {
     );
   }
 
+}
+
+class ListComp3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        ListTile(
+          leading: Image.network(
+            'https://scpic.chinaz.net/files/pic/pic9/202011/apic29138.jpg',
+            width: 80,
+            height: 120,
+            fit: BoxFit.cover,
+          ),
+          title: Text(
+            '高清图片栏目收集:人物图片,背景图片,高清图片,卡通图片,美女图片,非主',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 18,
+              color: Colors.cyanAccent
+            ),
+          ),
+          subtitle: Text(
+            '会多少次啊伴随放大上吊身亡滴哦害得我和年底我拿到我i能启动我i去哦单位hi哦好你都去哪玩i都劝我',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+        ListTile(
+          leading: Image.network(
+            'https://scpic.chinaz.net/files/pic/pic9/201807/zzpic12710.jpg',
+            width: 80,
+            height: 120,
+            fit: BoxFit.cover,
+          ),
+          title: Text(
+            '高清图片栏目收集:人物图片,背景图片,高清图片,卡通图片,美女图片,非主',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+                fontSize: 18,
+                color: Colors.cyanAccent
+            ),
+          ),
+          subtitle: Text(
+            '会多少次啊伴随放大上吊身亡滴哦害得我和年底我拿到我i能启动我i去哦单位hi哦好你都去哪玩i都劝我',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
+        ListTile(
+          leading: Image.network(
+            'https://scpic.chinaz.net/files/pic/pic9/202011/apic29135.jpg',
+            width: 80,
+            height: 120,
+            fit: BoxFit.cover,
+          ),
+          title: Text(
+            '高清图片栏目收集:人物图片,背景图片,高清图片,卡通图片,美女图片,非主',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+                fontSize: 18,
+                color: Colors.cyanAccent
+            ),
+          ),
+          subtitle: Text(
+            '会多少次啊伴随放大上吊身亡滴哦害得我和年底我拿到我i能启动我i去哦单位hi哦好你都去哪玩i都劝我',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
+        )
+      ],
+    );
+  }
+  
 }
