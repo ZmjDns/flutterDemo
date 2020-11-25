@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app_androidx/components/ListComp1.dart';
 
 import 'home.dart';
 
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Demo'),
         ),
-        body: BorderRadiusImage()//ImageContainer()
+        body: TestLists(),
+        //BorderRadiusImage()//ImageContainer()
           //HomeContent(),
       ),
       theme: ThemeData(
