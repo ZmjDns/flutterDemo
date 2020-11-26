@@ -7,7 +7,7 @@ class TestLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
+      child: ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
     );
   }
 }
@@ -282,6 +282,73 @@ class ListComp4 extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+}
+
+/**
+ * 水平列表
+ */
+class ListComp5 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 80,
+      alignment: Alignment.topCenter,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          Container(
+            width: 100,
+            // height: 80,  //水平列表竖直方向默认沾满，height不起作用，需要用listView的父布局约束高度
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                '我是1',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            width: 100,
+            child: Text(
+              '我是2',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 18
+              ),
+            ),
+          ),
+          Container(
+            width: 100,
+            child: Text(
+              '我是3',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 18
+              ),
+            ),
+          ),
+          Container(
+            width: 100,
+            child: Text(
+              '我是4',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 18
+              ),
+            ),
+          ),
+          Container(
+            width: 100,
+            child: Image.network('https://www.itying.com/images/flutter/1.png'),
+          )
+        ],
+      ),
     );
   }
 
