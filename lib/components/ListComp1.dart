@@ -7,7 +7,7 @@ class TestLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
+      child: DynamicList1(),//ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
     );
   }
 }
@@ -350,6 +350,54 @@ class ListComp5 extends StatelessWidget {
         ],
       ),
     );
+  }
+
+}
+
+
+class DynamicList1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: _getData(),
+    );
+  }
+
+  /**
+   * 私有方法
+   */
+  List<Widget> _getData() {
+    List<Widget> list = List();
+
+    for(var i = 0; i < 20; i++) {
+      list.add(
+        ListTile(
+          title: Text('我是标题$i'),
+          subtitle: Text('我是子标题$i'),
+        )
+      );
+    }
+
+    return list;
+
+    /*return [
+      ListTile(
+        title: Text('我是标题1'),
+        subtitle: Text('我是子标题1'),
+      ),
+      ListTile(
+        title: Text('我是标题1'),
+        subtitle: Text('我是子标题1'),
+      ),
+      ListTile(
+        title: Text('我是标题1'),
+        subtitle: Text('我是子标题1'),
+      ),
+      ListTile(
+        title: Text('我是标题1'),
+        subtitle: Text('我是子标题1'),
+      )
+    ];*/
   }
 
 }
