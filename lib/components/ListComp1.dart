@@ -2,12 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app_androidx/res/ListData.dart';
 
 class TestLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: DynamicList1(),//ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
+      child: DynamicList2(),//DynamicList1(),//ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
     );
   }
 }
@@ -398,6 +399,36 @@ class DynamicList1 extends StatelessWidget {
         subtitle: Text('我是子标题1'),
       )
     ];*/
+  }
+
+}
+/**
+ * 引入外部数据，动态实现图文列表
+ */
+class DynamicList2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: _getData(),
+    );
+  }
+  
+  List<Widget> _getData () {
+
+    /*var tempList = listData.map((e){
+      return ListTile(
+          leading: Image.network(e['imageUrl']),
+          title: Text(e['title']),
+          subtitle: Text(e['author'])
+      );
+    });*/
+    var tempList = listData.map((e) => ListTile(
+      leading: Image.network(e['imageUrl']),
+      title: Text(e['title']),
+      subtitle: Text(e['author']),
+    ));
+
+    return tempList.toList();
   }
 
 }
