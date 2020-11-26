@@ -7,7 +7,7 @@ class TestLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ListComp3()//ListComp2(),//ListComp1(),
+      child: ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
     );
   }
 }
@@ -227,4 +227,62 @@ class ListComp3 extends StatelessWidget {
     );
   }
   
+}
+/**
+ * list中放除ListTile之外的组件，图文列表
+ */
+class ListComp4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: EdgeInsets.all(10),
+      children: [
+        Image.network('https://www.itying.com/images/flutter/1.png'),
+        Container(
+          height: 20,
+          child: Text(
+            '我是标题',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black87
+            ),
+          ),
+        ),
+        Image.network('https://www.itying.com/images/flutter/2.png'),
+        Container(
+          height: 20,
+          child: Text(
+            '我是标题',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.black87
+            ),
+          ),
+        ),
+        Image.network('https://www.itying.com/images/flutter/3.png'),
+        Container(
+          height: 20,
+          child: Text(
+            '我是标题',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.black87
+            ),
+          ),
+        ),
+        Image.network('https://www.itying.com/images/flutter/4.png'),
+        Container(
+          height: 20,
+          child: Text(
+            '我是标题',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.black87
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
 }
