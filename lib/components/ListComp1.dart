@@ -8,7 +8,7 @@ class TestLists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: DynamicList2(),//DynamicList1(),//ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
+      child: DynamicList3(),//DynamicList2(),//DynamicList1(),//ListComp5(),//ListComp4(),//ListComp3()//ListComp2(),//ListComp1(),
     );
   }
 }
@@ -429,6 +429,38 @@ class DynamicList2 extends StatelessWidget {
     ));
 
     return tempList.toList();
+  }
+
+}
+
+/**
+ * ListView.builder实现listView
+ */
+
+class DynamicList3 extends StatelessWidget {
+
+  // List _listData;
+
+  // DynamicList3 () {
+  //   // for(var i = 0; i < 10; i++) {
+  //   //   _listData.add('我是第$i条数据');
+  //   // }
+  //   _listData = listData;
+  // }
+
+  Widget _getListitem (context, index) {
+    return ListTile(
+      leading: Image.network(listData[index]['imageUrl']),
+      title: Text(listData[index]['title']),
+      subtitle: Text(listData[index]['author']),
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: listData.length,
+      itemBuilder: _getListitem
+    );
   }
 
 }
