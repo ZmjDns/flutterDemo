@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
+    return LayoutPractice();//LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
     //IconContainer(Icons.home,color: Colors.black87,);
   }
 }
@@ -116,3 +116,54 @@ class LayoutExpandedComp1 extends StatelessWidget {
     );
   }
 }
+
+/**
+ * 布局组件综合练习
+ */
+class LayoutPractice extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Container(
+          height: 180,
+          color: Colors.black87,
+        ),
+        SizedBox(height: 10,),
+        Row(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Container(
+                height: 180,
+                child: Image.network('https://www.itying.com/images/flutter/1.png',fit: BoxFit.cover,),
+              )
+            ),
+            SizedBox(width: 10,),
+            Expanded(
+              flex: 1,
+              child: Container(
+                height: 180,
+                child: ListView(
+                  children: [
+                    Container(
+                      height: 85,
+                      child: Image.network('https://www.itying.com/images/flutter/2.png',fit: BoxFit.cover,),
+                    ),
+                    SizedBox(height: 10,),
+                    Container(
+                      height: 85,
+                      child: Image.network('https://www.itying.com/images/flutter/3.png',fit: BoxFit.cover,),
+                    ),
+                  ],
+                )
+              ),
+            )
+          ],
+        )
+      ],
+    );
+  }
+}
+
+
