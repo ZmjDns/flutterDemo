@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return IconContainer(Icons.home,color: Colors.black87,);
+    return RowLayout1();
+    //IconContainer(Icons.home,color: Colors.black87,);
   }
 }
 
@@ -31,8 +33,8 @@ class IconContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 100,
+      height: 48,
+      width: 48,
       color: this.color,
       child: Center(
         child: Icon(icon,size: size,color: Colors.white,),
@@ -41,3 +43,29 @@ class IconContainer extends StatelessWidget {
   }
 
 }
+
+/**
+ * 水平布局组件 row的基本使用
+ */
+class RowLayout1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 400,
+      height: 600,
+      color: Colors.pink,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          IconContainer(Icons.home,color: Colors.blue,),
+          IconContainer(Icons.contact_page_outlined,color: Colors.orange,),
+          IconContainer(Icons.local_airport,color: Colors.purpleAccent,),
+          IconContainer(Icons.person,color: Colors.pinkAccent,)
+        ],
+      ),
+    );
+  }
+
+}
+
