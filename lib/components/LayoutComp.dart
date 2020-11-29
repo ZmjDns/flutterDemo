@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RowLayout1();
+    return LayoutColumn1();//RowLayout1();
     //IconContainer(Icons.home,color: Colors.black87,);
   }
 }
@@ -57,6 +57,31 @@ class RowLayout1 extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          IconContainer(Icons.home,color: Colors.blue,),
+          IconContainer(Icons.contact_page_outlined,color: Colors.orange,),
+          IconContainer(Icons.local_airport,color: Colors.purpleAccent,),
+          IconContainer(Icons.person,color: Colors.pinkAccent,)
+        ],
+      ),
+    );
+  }
+
+}
+
+/**
+ * 垂直布局组件 row的基本使用
+ */
+class LayoutColumn1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 300,
+      height: 600,
+      color: Colors.pink,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           IconContainer(Icons.home,color: Colors.blue,),
           IconContainer(Icons.contact_page_outlined,color: Colors.orange,),
