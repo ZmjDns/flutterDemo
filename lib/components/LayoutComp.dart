@@ -254,5 +254,49 @@ class LayoutStack3 extends StatelessWidget {
     );
   }
 }
+/**
+ * Stack小练习
+ */
+class StackPractice extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Container(
+          height: 200,
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Image.network('https://www.itying.com/images/flutter/2.png',fit: BoxFit.cover,),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Text('我是标题'),
+              )
+            ],
+          ),
+        ),
+        SizedBox(height: 10,),
+        Container(
+          height: 200,
+          child: Stack(
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Image.network('https://www.itying.com/images/flutter/1.png',fit: BoxFit.cover,),
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Text('hahahhaha我是文字'),
+              )
+            ],
+          ),
+        ),
+
+      ],
+    );
+  }
+}
 
 
