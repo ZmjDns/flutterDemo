@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_app_androidx/components/GridViewComp.dart';
+import 'package:flutter_app_androidx/components/LayoutComp.dart';
 import 'package:flutter_app_androidx/components/ListComp1.dart';
 
 void main () => runApp(new MyApp());
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Demo'),
         ),
-        body: GridViewPage(),
+        body: LayoutPage(),
+        //GridViewPage(),
         //TestLists(),
         //BorderRadiusImage()//ImageContainer()
           //HomeContent(),
