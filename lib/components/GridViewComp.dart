@@ -7,7 +7,7 @@ class GridViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: DynamicGridView2(),//DynamicGridView1(),//GridViewComp1(),
+      child: DynamicGridView3(),//DynamicGridView2(),//DynamicGridView1(),//GridViewComp1(),
     );
   }
 }
@@ -125,3 +125,43 @@ class DynamicGridView2 extends StatelessWidget {
   }
 
 }
+
+/**
+ * GridView.builder实现GridView
+ */
+class DynamicGridView3 extends StatelessWidget {
+
+  Widget _getItemWidget (context, index){
+    return Container(
+      child: Column(
+        children: [
+          Image.network(listData[index]['imageUrl']),
+          Text(listData[index]['title']),
+          Text(listData[index]['author'])
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 10,
+          crossAxisSpacing: 10,
+
+        ),
+        itemCount: listData.length,
+        itemBuilder: _getItemWidget,
+      ),
+    );
+  }
+
+}
+
+
+
+
