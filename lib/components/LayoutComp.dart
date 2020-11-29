@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutStack1();
+    return LayoutStack2();//LayoutStack1();
     //LayoutPractice();//LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
     //IconContainer(Icons.home,color: Colors.black87,);
   }
@@ -185,6 +186,39 @@ class LayoutStack1 extends StatelessWidget {
       ],
     );
   }
+}
+/**
+ * Stack结合Align实现多个子组件任何位置定位
+ */
+class LayoutStack2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: 300,
+        height: 400,
+        color: Colors.red,
+        child: Stack(
+          // alignment: Alignment.center,
+          children: [
+            Align(
+              alignment: Alignment.topRight,
+              child: Icon(Icons.search,size: 32,color: Colors.tealAccent,),
+            ),
+            Align(
+              alignment: Alignment(0,0.3),
+              child: Icon(Icons.ac_unit,size: 40,color: Colors.white,),
+            ),
+            Align(
+              alignment: Alignment(1,1),
+              child: Icon(Icons.send,size: 40,color: Colors.orange,),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
 }
 
 
