@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutStack2();//LayoutStack1();
+    return StackPractice();//LayoutStack3();//LayoutStack2();//LayoutStack1();
     //LayoutPractice();//LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
     //IconContainer(Icons.home,color: Colors.black87,);
   }
@@ -219,6 +219,40 @@ class LayoutStack2 extends StatelessWidget {
     );
   }
 
+}
+
+/**
+ * Posined结合Stack实现多个子View定位
+ */
+class LayoutStack3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: 300,
+        height: 400,
+        color: Colors.red,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 10,
+              child: Icon(Icons.ac_unit,size: 32,color: Colors.white,),
+            ),
+            Positioned(
+              left: 30,
+              top: 20,
+              child: Icon(Icons.send,size: 40,color: Colors.tealAccent,),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 10,
+              child: Icon(Icons.home,size: 32,color: Colors.tealAccent,),
+            )
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 
