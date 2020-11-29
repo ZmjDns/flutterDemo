@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_app_androidx/res/ListData.dart';
 
 class GridViewPage extends StatelessWidget {
@@ -87,11 +88,25 @@ class DynamicGridView2 extends StatelessWidget {
 
   Widget _gridViewItem(e) {
     return Container(
-      decoration: BoxDecoration(color: Colors.yellow),
+      decoration: BoxDecoration(
+        color: Colors.yellow,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(
+          color: Color.fromRGBO(233, 233, 233, 0.9),
+          width: 1,
+        )
+      ),
       child: Column(
         children: [
           Image.network(e['imageUrl']),
-          Text(e['title'])
+          SizedBox(height: 10,),//Text没有margin/padding  通过SizedBox将text与上面的图片拉开间距（也可以用Container）
+          Text(
+            e['title'],
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 18
+            ),
+          )
         ],
       ),
     );
@@ -100,11 +115,11 @@ class DynamicGridView2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 3,
+      crossAxisCount: 2,
       mainAxisSpacing: 10,
       crossAxisSpacing: 10,
       padding: EdgeInsets.all(10),
-      childAspectRatio: 0.7,
+      // childAspectRatio: 0.7,
       children: _getGridViewDataList(),
     );
   }
