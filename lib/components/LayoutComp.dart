@@ -5,7 +5,8 @@ import 'package:flutter/rendering.dart';
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutPractice();//LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
+    return LayoutStack1();
+    //LayoutPractice();//LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
     //IconContainer(Icons.home,color: Colors.black87,);
   }
 }
@@ -161,6 +162,26 @@ class LayoutPractice extends StatelessWidget {
             )
           ],
         )
+      ],
+    );
+  }
+}
+/**
+ * stack简单定位
+ */
+class LayoutStack1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      //alignment: Alignment.bottomRight,//所有的元素都居中
+      alignment: Alignment(-1,0.3),
+      children: [
+        Container(
+          width: 200,
+          height: 400,
+          color: Colors.red,
+        ),
+        Text('我是一个文本222222'),
       ],
     );
   }
