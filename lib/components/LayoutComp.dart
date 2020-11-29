@@ -5,7 +5,7 @@ import 'package:flutter/rendering.dart';
 class LayoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return LayoutColumn1();//RowLayout1();
+    return LayoutExpandedComp1();//LayoutColumn1();//RowLayout1();
     //IconContainer(Icons.home,color: Colors.black87,);
   }
 }
@@ -94,3 +94,25 @@ class LayoutColumn1 extends StatelessWidget {
 
 }
 
+
+/**
+ *Expanded组件
+ */
+class LayoutExpandedComp1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          flex: 1,
+          child:IconContainer(Icons.home,color: Colors.blue,),
+        ),
+        Expanded(
+          flex: 2,
+          child: IconContainer(Icons.contact_page_outlined,color: Colors.orange,),
+        ),
+        IconContainer(Icons.local_atm,color: Colors.red,),
+      ],
+    );
+  }
+}
