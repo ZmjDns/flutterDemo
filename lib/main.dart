@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_app_androidx/components/AspectRatio.dart';
+import 'package:flutter_app_androidx/components/AspectRatioCardView.dart';
 import 'package:flutter_app_androidx/components/GridViewComp.dart';
 import 'package:flutter_app_androidx/components/LayoutComp.dart';
 import 'package:flutter_app_androidx/components/ListComp1.dart';
