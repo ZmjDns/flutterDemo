@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class AspectRatioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CardComp1();//AspectRatio2();//LayoutSimpleAspect();
+    return CardComp2();//CardComp1();//AspectRatio2();//LayoutSimpleAspect();
   }
 }
 /**
@@ -83,4 +84,59 @@ class CardComp1 extends StatelessWidget {
       ],
     );
   }
+}
+
+/**
+ * 通过卡片组件实现商品图文数据
+ */
+class CardComp2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Card(
+          margin: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              AspectRatio(
+                aspectRatio: 16/9,
+                child: Image.network('https://www.itying.com/images/flutter/1.png', fit: BoxFit.cover,),
+              ),
+              ListTile(
+                leading: ClipOval(
+                  child: Image.network(
+                    'https://www.itying.com/images/flutter/1.png',
+                    height: 60,
+                    width: 60,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                title: Text('我是标题'),
+                subtitle: Text('我是副标题'),
+              )
+            ],
+          ),
+        ),
+        Card(
+          margin: EdgeInsets.all(10),
+          child: Column(
+            children: [
+              AspectRatio(
+                aspectRatio: 16/9,
+                child: Image.network('https://www.itying.com/images/flutter/2.png', fit: BoxFit.cover,),
+              ),
+              ListTile(
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage('https://www.itying.com/images/flutter/2.png',),
+                ),
+                title: Text('我是标题'),
+                subtitle: Text('我是副标题'),
+              )
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
 }
