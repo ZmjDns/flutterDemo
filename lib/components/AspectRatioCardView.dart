@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_app_androidx/res/ListData.dart';
 
 class AspectRatioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return CardComp2();//CardComp1();//AspectRatio2();//LayoutSimpleAspect();
+    return DynamicCardList();//CardComp2();//CardComp1();//AspectRatio2();//LayoutSimpleAspect();
   }
 }
 /**
@@ -136,6 +137,44 @@ class CardComp2 extends StatelessWidget {
           ),
         )
       ],
+    );
+  }
+
+}
+/**
+ * 动态生成listCard
+ */
+class DynamicCardList extends StatelessWidget {
+
+  List _getLists() {
+    var tempList =  listData.map((e) =>
+      Card(
+        margin: EdgeInsets.all(10),
+        child: Column(
+          children: [
+            AspectRatio(
+              aspectRatio: 16/9,
+              child: Image.network(e['imageUrl'],fit: BoxFit.cover,),
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(e['imageUrl']),
+              ),
+              title: Text(e['title']),
+              subtitle: Text(e['author']),
+            )
+          ],
+        ),
+      )
+    );
+
+    return tempList.toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: _getLists(),
     );
   }
 
