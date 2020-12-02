@@ -23,4 +23,36 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+/**
+ * 有状态组件
+ * 快速生成StastefulWidget的快捷键   stful
+ */
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
+class _MyHomePageState extends State<MyHomePage> {
+  var num = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Chip(
+            label: Text('${this.num}'),
+          ),
+          SizedBox(height: 20,),
+          RaisedButton(
+            child: Text('CountNum'),
+            onPressed: (){
+              setState(() {
+                this.num++;
+              });
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
