@@ -8,6 +8,8 @@ import 'package:flutter_app_androidx/components/GridViewComp.dart';
 import 'package:flutter_app_androidx/components/LayoutComp.dart';
 import 'package:flutter_app_androidx/components/ListComp1.dart';
 
+import 'components/WrapLayoutComps.dart';
+
 void main () => runApp(new MyApp());
 
 /*
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Demo'),
         ),
-        body: AspectRatioPage(),
+        body: WrapLayoutPage(),
+        //AspectRatioPage(),
         //LayoutPage(),
         //GridViewPage(),
         //TestLists(),
