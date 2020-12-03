@@ -56,3 +56,39 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+/**
+ * 动态增加的有状态LIstView组件
+ */
+class ListAdder extends StatefulWidget {
+  @override
+  _ListAdderState createState() => _ListAdderState();
+}
+
+class _ListAdderState extends State<ListAdder> {
+
+  List _list = List();
+  var num = 0;
+  addListData () {
+    this._list.add('我是标题${this.num++}');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Column(
+          children: this._list.map((e) => Text(e)).toList(),
+        ),
+        SizedBox(height: 10,),
+        RaisedButton(
+          child: Text('btn'),
+          onPressed: () {
+            setState(() {
+              this.addListData();
+            });
+          },
+        )
+      ],
+    );
+  }
+}
