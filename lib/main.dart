@@ -23,7 +23,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }*/
-
+/**
+ * 底部导航 BottomNavigationBar
+ */
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,7 +41,28 @@ class MyApp extends StatelessWidget {
         //GridViewPage(),
         //TestLists(),
         //BorderRadiusImage()//ImageContainer()
-          //HomeContent(),
+        //HomeContent(),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,  //四个以上的tab需要，设置这个属性
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: '首页'
+            ),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.category),
+                label: '分类'
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: '设置'
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.local_fire_department_rounded),
+              label: '我的'
+            )
+          ],
+        ),
       ),
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
