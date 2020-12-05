@@ -69,7 +69,6 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class HomeContent extends StatelessWidget {
@@ -142,7 +141,6 @@ class ImageContainer extends StatelessWidget {
       ),
     );
   }
-
 }
 
 /**
@@ -198,7 +196,6 @@ class ClipRadius extends StatelessWidget {
       ),
     );
   }
-
 }
 
 class LocalImage extends StatelessWidget {
@@ -217,5 +214,4 @@ class LocalImage extends StatelessWidget {
       ),
     );
   }
-
 }
