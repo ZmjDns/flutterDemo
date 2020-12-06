@@ -30,46 +30,63 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Demo'),
-        ),
-        body:ListAdder(),//HomePage(),
-        //WrapLayoutPage(),
-        //AspectRatioPage(),
-        //LayoutPage(),
-        //GridViewPage(),
-        //TestLists(),
-        //BorderRadiusImage()//ImageContainer()
-        //HomeContent(),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,  //四个以上的tab需要，设置这个属性
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: '首页'
-            ),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.category),
-                label: '分类'
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: '设置'
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.local_fire_department_rounded),
-              label: '我的'
-            )
-          ],
-        ),
-      ),
+      home: Tabs(),
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
       ),
     );
   }
 }
+/**
+ * 自定义底部Tab组件
+ */
+class Tabs extends StatefulWidget {
+  @override
+  _TabsState createState() => _TabsState();
+}
+
+class _TabsState extends State<Tabs> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('FlutterDemo'),),
+      body: ListAdder(),//HomePage(),
+      //WrapLayoutPage(),
+      //AspectRatioPage(),
+      //LayoutPage(),
+      //GridViewPage(),
+      //TestLists(),
+      //BorderRadiusImage()//ImageContainer()
+      //HomeContent(),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: 0,
+        onTap: (int index){
+          print(index);
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '首页'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.category),
+            label: '分类'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: '设置'
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_fire_department),
+            label: '我的'
+          )
+        ],
+      ),
+    );
+  }
+}
+
 
 class HomeContent extends StatelessWidget {
   @override
