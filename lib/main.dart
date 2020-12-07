@@ -46,6 +46,8 @@ class Tabs extends StatefulWidget {
 }
 
 class _TabsState extends State<Tabs> {
+  //动态设置选中tab
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,9 +62,11 @@ class _TabsState extends State<Tabs> {
       //HomeContent(),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        currentIndex: 0,
+        currentIndex: this._currentIndex,
         onTap: (int index){
-          print(index);
+          setState(() {
+            this._currentIndex = index;
+          });
         },
         items: [
           BottomNavigationBarItem(
