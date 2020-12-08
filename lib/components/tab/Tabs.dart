@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/stateful/homePage.dart';
+import 'package:flutter_app_androidx/pages/CategoryPage.dart';
+import 'package:flutter_app_androidx/pages/MinePage.dart';
+import 'package:flutter_app_androidx/pages/SettingPage.dart';
 
 /**
  * 自定义底部Tab组件
@@ -12,11 +15,20 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   //动态设置选中tab
   int _currentIndex = 0;
+
+  List _pageList = [
+    HomePage(),
+    CategoryPage(),
+    SettingPage(),
+    MinePage()
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('FlutterDemo'),),
-      body: ListAdder(),//HomePage(),
+      body: this._pageList[this._currentIndex],
+      //ListAdder(),//HomePage(),
       //WrapLayoutPage(),
       //AspectRatioPage(),
       //LayoutPage(),
