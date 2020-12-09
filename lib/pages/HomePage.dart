@@ -17,11 +17,13 @@ class _HomePageState extends State<HomePage> {
             child: Text('进入搜索界面'),
             onPressed: (){
               //页面跳转
-              Navigator.of(context).push(
+              /*Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => SearchPage()
                 )
-              );
+              );*/
+              //通过命名路由跳转
+              Navigator.pushNamed(context, '/search');
             },
           )
         ],

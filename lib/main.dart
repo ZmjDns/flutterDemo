@@ -8,6 +8,8 @@ import 'package:flutter_app_androidx/components/GridViewComp.dart';
 import 'package:flutter_app_androidx/components/LayoutComp.dart';
 import 'package:flutter_app_androidx/components/ListComp1.dart';
 import 'package:flutter_app_androidx/components/stateful/homePage.dart';
+import 'package:flutter_app_androidx/pages/FormPage.dart';
+import 'package:flutter_app_androidx/pages/SearchPage.dart';
 
 import 'components/WrapLayoutComps.dart';
 import 'components/tab/Tabs.dart';
@@ -35,6 +37,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
       ),
+
+      //  命名路由
+      routes: {
+        '/search': (context) => SearchPage(),
+        '/form': (context) => FormPage()
+      },
     );
   }
 }

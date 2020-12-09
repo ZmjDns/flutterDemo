@@ -15,13 +15,15 @@ class _CategoryPageState extends State<CategoryPage> {
         RaisedButton(
           child: Text('进入表单界面'),
           onPressed: (){
-            Navigator.of(context).push(
+            /*Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => FormPage(
                   title: '我是传值数据',
                 )
               )
-            );
+            );*/
+            //通过命名路由跳转页面
+            Navigator.pushNamed(context, '/form');
           },
         )
       ],
