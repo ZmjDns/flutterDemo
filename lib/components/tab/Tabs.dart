@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_androidx/components/stateful/homePage.dart';
 import 'package:flutter_app_androidx/pages/CategoryPage.dart';
+import 'package:flutter_app_androidx/pages/HomePage.dart';
 import 'package:flutter_app_androidx/pages/MinePage.dart';
 import 'package:flutter_app_androidx/pages/SettingPage.dart';
 
@@ -37,13 +37,15 @@ class _TabsState extends State<Tabs> {
       //BorderRadiusImage()//ImageContainer()
       //HomeContent(),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.fixed,  //配置底部大于3个tab
         currentIndex: this._currentIndex,
         onTap: (int index){
           setState(() {
             this._currentIndex = index;
           });
         },
+        iconSize: 36.0, //设置底部图标大小
+        fixedColor: Colors.blue,  //设置选中的颜色
         items: [
           BottomNavigationBarItem(
               icon: Icon(Icons.home),
