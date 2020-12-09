@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app_androidx/pages/FormPage.dart';
 
 class CategoryPage extends StatefulWidget {
   @override
@@ -8,8 +10,19 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('分类'),
+    return Column(
+      children: [
+        RaisedButton(
+          child: Text('进入表单界面'),
+          onPressed: (){
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => FormPage()
+              )
+            );
+          },
+        )
+      ],
     );
   }
 }
