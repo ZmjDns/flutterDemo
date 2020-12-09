@@ -17,7 +17,9 @@ class _CategoryPageState extends State<CategoryPage> {
           onPressed: (){
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => FormPage()
+                builder: (context) => FormPage(
+                  title: '我是传值数据',
+                )
               )
             );
           },
