@@ -10,6 +10,7 @@ import 'package:flutter_app_androidx/components/ListComp1.dart';
 import 'package:flutter_app_androidx/components/stateful/homePage.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
+import 'package:flutter_app_androidx/routers/Routers.dart';
 
 import 'components/WrapLayoutComps.dart';
 import 'components/tab/Tabs.dart';
@@ -32,10 +33,10 @@ class MyApp extends StatelessWidget {
 class MyApp extends StatelessWidget {
 
   //命名路由传参、统一的界面入口配置
-  final routes = {
+  /*final routes = {
     '/search': (context, {arguments}) => SearchPage(arguments: arguments),
     '/form': (context) => FormPage(),
-  };
+  };*/
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +51,8 @@ class MyApp extends StatelessWidget {
         '/form': (context) => FormPage()
       },*/
       //命名路由传参处理方法
-      onGenerateRoute: (RouteSettings settings) {
+      onGenerateRoute: onGenerateRoute,
+      /*onGenerateRoute: (RouteSettings settings) {
         final String name = settings.name;
         final Function pageRouteBuilder = this.routes[name];
         if(pageRouteBuilder != null) {
@@ -68,7 +70,7 @@ class MyApp extends StatelessWidget {
         } else {
           return null;
         }
-      },
+      },*/
 
     );
   }
