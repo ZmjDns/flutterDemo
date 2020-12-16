@@ -30,6 +30,12 @@ class MyApp extends StatelessWidget {
  * 底部导航 BottomNavigationBar
  */
 class MyApp extends StatelessWidget {
+
+  //命名路由传参、统一的界面入口配置
+  final routes = {
+    '/search': (context, {arguments}) => SearchPage(arguments: arguments),
+    '/form': (context) => FormPage(),
+  };
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -38,11 +44,32 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.yellow  //  app主题颜色
       ),
 
-      //  命名路由
+      /*//  命名路由
       routes: {
         '/search': (context) => SearchPage(),
         '/form': (context) => FormPage()
+      },*/
+      //命名路由传参处理方法
+      onGenerateRoute: (RouteSettings settings) {
+        final String name = settings.name;
+        final Function pageRouteBuilder = this.routes[name];
+        if(pageRouteBuilder != null) {
+          if(settings.arguments != null) {
+            final Route route = MaterialPageRoute(
+              builder: (context) => pageRouteBuilder(context, arguments: settings.arguments)
+            );
+            return route;
+          } else {
+            final Route route = MaterialPageRoute(
+              builder: (context) => pageRouteBuilder(context)
+            );
+            return route;
+          }
+        } else {
+          return null;
+        }
       },
+
     );
   }
 }

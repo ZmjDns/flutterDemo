@@ -22,8 +22,8 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) => SearchPage()
                 )
               );*/
-              //通过命名路由跳转
-              Navigator.pushNamed(context, '/search');
+              //通过命名路由跳转(传参的情况下，直接传入arguments)
+              Navigator.pushNamed(context, '/search',arguments: {'id': 123});
             },
           )
         ],
