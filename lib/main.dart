@@ -40,7 +40,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Tabs(),
+      // home: Tabs(),
+      initialRoute: '/',  //初始化加载的路由，抽离Tabs
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
       ),
