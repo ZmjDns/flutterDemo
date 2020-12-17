@@ -2,12 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
+import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
+import 'package:flutter_app_androidx/pages/ProductPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
 
 final routes = {
   '/': (context,{arguments}) => Tabs(), //  抽离Tabs作为跟路由
   '/form': (context,{arguments}) => FormPage(),
-  '/search': (context,{arguments}) => SearchPage(arguments: arguments,)
+  '/search': (context,{arguments}) => SearchPage(arguments: arguments,),
+  '/product': (context) => ProductPage(),
+  '/productDetail': (context,{arguments}) => ProductDetailPage(arguments: arguments)
 };
 
 // 统一命名路由跳转
