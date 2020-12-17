@@ -25,6 +25,12 @@ class _HomePageState extends State<HomePage> {
               //通过命名路由跳转(传参的情况下，直接传入arguments)
               Navigator.pushNamed(context, '/search',arguments: {'id': 123});
             },
+          ),
+          RaisedButton(
+            child: Text('进入商品界面'),
+            onPressed: (){
+              Navigator.pushNamed(context, '/product');
+            },
           )
         ],
       ),
