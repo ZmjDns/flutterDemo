@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -17,6 +20,10 @@ class _LoginPageState extends State<LoginPage> {
           RaisedButton(
             child: Text('返回首页'),
             onPressed: (){
+              // 普通返回首页路由设置
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => Tabs()), (route) => route == null
+              );
             },
           )
         ],
