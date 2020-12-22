@@ -25,6 +25,12 @@ class _CategoryPageState extends State<CategoryPage> {
             //通过命名路由跳转页面llllllll
             Navigator.pushNamed(context, '/form');
           },
+        ),
+        RaisedButton(
+          child: Text('点击注册'),
+          onPressed: (){
+            Navigator.pushNamed(context, '/register');
+          },
         )
       ],
     );

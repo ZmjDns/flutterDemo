@@ -5,13 +5,17 @@ import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
+import 'package:flutter_app_androidx/pages/user/login.dart';
+import 'package:flutter_app_androidx/pages/user/register.dart';
 
 final routes = {
   '/': (context,{arguments}) => Tabs(), //  抽离Tabs作为跟路由
   '/form': (context,{arguments}) => FormPage(),
   '/search': (context,{arguments}) => SearchPage(arguments: arguments,),
   '/product': (context) => ProductPage(),
-  '/productDetail': (context,{arguments}) => ProductDetailPage(arguments: arguments)
+  '/productDetail': (context,{arguments}) => ProductDetailPage(arguments: arguments),
+  '/register': (context) => RegisterPage(),
+  '/login': (context) => LoginPage()
 };
 
 // 统一命名路由跳转
