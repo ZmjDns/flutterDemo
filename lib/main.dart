@@ -41,7 +41,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: Tabs(),
-      initialRoute: '/',  //初始化加载的路由，抽离Tabs
+      // initialRoute: '/',  //初始化加载的路由，抽离Tabs
+      initialRoute: '/appBar',
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
       ),

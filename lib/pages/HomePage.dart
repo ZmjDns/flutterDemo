@@ -31,6 +31,13 @@ class _HomePageState extends State<HomePage> {
             onPressed: (){
               Navigator.pushNamed(context, '/product');
             },
+          ),
+          SizedBox(height: 10,),
+          RaisedButton(
+            child: Text('进入AppBar'),
+            onPressed: (){
+              Navigator.pushNamed(context, '/appBar');
+            },
           )
         ],
       ),

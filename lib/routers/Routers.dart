@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
+import 'package:flutter_app_androidx/pages/AppBarPage.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
@@ -15,7 +16,8 @@ final routes = {
   '/product': (context) => ProductPage(),
   '/productDetail': (context,{arguments}) => ProductDetailPage(arguments: arguments),
   '/register': (context) => RegisterPage(),
-  '/login': (context) => LoginPage()
+  '/login': (context) => LoginPage(),
+  '/appBar': (context) => AppBarPage()
 };
 
 // 统一命名路由跳转
