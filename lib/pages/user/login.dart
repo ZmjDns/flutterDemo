@@ -20,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
             onPressed: (){
               // 普通返回首页路由设置
               Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => Tabs()), (route) => route == null
+                  MaterialPageRoute(builder: (context) => Tabs(index: 1,)), (route) => route == null
               );
             },
           )

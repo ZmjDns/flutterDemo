@@ -8,13 +8,19 @@ import 'package:flutter_app_androidx/pages/SettingPage.dart';
  * 自定义底部Tab组件
  */
 class Tabs extends StatefulWidget {
+  final index;
+  Tabs({Key key,this.index = 0}): super(key: key);
   @override
-  _TabsState createState() => _TabsState();
+  _TabsState createState() => _TabsState(this.index);
 }
 
 class _TabsState extends State<Tabs> {
   //动态设置选中tab
-  int _currentIndex = 0;
+  int _currentIndex;
+
+  _TabsState(index) {
+    this._currentIndex = index;
+  }
 
   List _pageList = [
     HomePage(),
