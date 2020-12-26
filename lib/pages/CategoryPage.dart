@@ -22,7 +22,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 )
               )
             );*/
-            //通过命名路由跳转页面llllllllll
+            //通过命名路由跳转页面lllllllllll
             Navigator.pushNamed(context, '/form');
           },
         ),
