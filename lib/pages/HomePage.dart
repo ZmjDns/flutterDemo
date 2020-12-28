@@ -38,6 +38,13 @@ class _HomePageState extends State<HomePage> {
             onPressed: (){
               Navigator.pushNamed(context, '/appBar');
             },
+          ),
+          SizedBox(height: 10,),
+          RaisedButton(
+            child: Text('进入顶部Tab页'),
+            onPressed: (){
+              Navigator.pushNamed(context, '/topTab');
+            },
           )
         ],
       ),
