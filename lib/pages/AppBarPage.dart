@@ -7,6 +7,20 @@ class AppBarPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('AppbarPage'),
         backgroundColor: Colors.blue,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: (){
+            print('点击home');
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: (){
+              print('点击search');
+            },
+          )
+        ],
       ),
       body: Column(
         children: [
