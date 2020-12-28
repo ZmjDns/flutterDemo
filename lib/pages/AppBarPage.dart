@@ -6,6 +6,7 @@ class AppBarPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('AppbarPage'),
+        centerTitle: true,  // 标题居中
         backgroundColor: Colors.blue,
         leading: IconButton(
           icon: Icon(Icons.menu),

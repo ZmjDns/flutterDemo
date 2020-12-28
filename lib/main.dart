@@ -40,6 +40,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,  // 去掉右上角debug标签
       // home: Tabs(),
       // initialRoute: '/',  //初始化加载的路由，抽离Tabs
       initialRoute: '/appBar',
