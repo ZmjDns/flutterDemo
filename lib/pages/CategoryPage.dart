@@ -15,10 +15,15 @@ class _CategoryPageState extends State<CategoryPage> {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.blue,
           title: Row(
             children: [
               Expanded(
                 child: TabBar(
+                  indicatorColor: Colors.deepOrange,  // 底部选中指示器颜色
+                  indicatorSize: TabBarIndicatorSize.label, //  底部指示器长度
+                  labelColor: Colors.deepOrange,  //  选中文字颜色
+                  unselectedLabelColor: Colors.black, //  未选中文字颜色
                   tabs: [
                     Tab(text: '热销',),
                     Tab(text: '推荐',),
