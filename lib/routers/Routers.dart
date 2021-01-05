@@ -6,6 +6,7 @@ import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
+import 'package:flutter_app_androidx/pages/TabBarControllerPage.dart';
 import 'package:flutter_app_androidx/pages/TopTabPage.dart';
 import 'package:flutter_app_androidx/pages/user/login.dart';
 import 'package:flutter_app_androidx/pages/user/register.dart';
@@ -19,7 +20,8 @@ final routes = {
   '/register': (context) => RegisterPage(),
   '/login': (context) => LoginPage(),
   '/appBar': (context) => AppBarPage(),
-  '/topTab': (context) => TopTabPage()
+  '/topTab': (context) => TopTabPage(),
+  '/tabBarController': (context) => TabBarControllerPage()
 };
 
 // 统一命名路由跳转
