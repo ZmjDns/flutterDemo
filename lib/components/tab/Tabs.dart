@@ -72,7 +72,46 @@ class _TabsState extends State<Tabs> {
         ],
       ),
       drawer: Drawer(
-        child: Text('Hello Flutter'),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: DrawerHeader(
+                    child: Text('Hello'),
+                    decoration: BoxDecoration(
+                      color: Colors.yellow,
+                      image: DecorationImage(
+                        image: NetworkImage('https://bkimg.cdn.bcebos.com/pic/faedab64034f78f0ed0278c77c310a55b3191cfc?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg'),
+                        fit: BoxFit.cover
+                      )
+                    ),
+                  ),
+                )
+              ],
+            ),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.home),
+              ),
+              title: Text('我的空间'),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.people),
+              ),
+              title: Text('用户中心'),
+            ),
+            Divider(),
+            ListTile(
+              leading: CircleAvatar(
+                child: Icon(Icons.settings),
+              ),
+              title: Text('设置'),
+            )
+          ],
+        )
       ),
       endDrawer: Text('rightDrawer'),
     );
