@@ -119,6 +119,10 @@ class _TabsState extends State<Tabs> {
                 child: Icon(Icons.people),
               ),
               title: Text('用户中心'),
+              onTap: (){
+                Navigator.of(context).pop();  //  隐藏侧边栏
+                Navigator.pushNamed(context, '/userCenter');
+              },
             ),
             Divider(),
             ListTile(

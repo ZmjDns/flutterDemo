@@ -10,6 +10,7 @@ import 'package:flutter_app_androidx/pages/TabBarControllerPage.dart';
 import 'package:flutter_app_androidx/pages/TopTabPage.dart';
 import 'package:flutter_app_androidx/pages/user/login.dart';
 import 'package:flutter_app_androidx/pages/user/register.dart';
+import 'package:flutter_app_androidx/pages/user/userCenter.dart';
 
 final routes = {
   '/': (context,{arguments}) => Tabs(), //  抽离Tabs作为跟路由
@@ -21,7 +22,8 @@ final routes = {
   '/login': (context) => LoginPage(),
   '/appBar': (context) => AppBarPage(),
   '/topTab': (context) => TopTabPage(),
-  '/tabBarController': (context) => TabBarControllerPage()
+  '/tabBarController': (context) => TabBarControllerPage(),
+  '/userCenter': (context) => UserCenter(),
 };
 
 // 统一命名路由跳转
