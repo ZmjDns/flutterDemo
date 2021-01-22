@@ -32,7 +32,7 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text('FlutterDemo'),),  // 去掉顶部app标题
+      appBar: AppBar(title: Text('FlutterDemo'),),  // 去掉顶部app标题
       body: this._pageList[this._currentIndex],
       //ListAdder(),//HomePage(),
       //WrapLayoutPage(),
@@ -71,6 +71,10 @@ class _TabsState extends State<Tabs> {
           )
         ],
       ),
+      drawer: Drawer(
+        child: Text('Hello Flutter'),
+      ),
+      endDrawer: Text('rightDrawer'),
     );
   }
 }
