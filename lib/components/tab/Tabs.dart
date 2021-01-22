@@ -77,10 +77,27 @@ class _TabsState extends State<Tabs> {
             Row(
               children: [
                 Expanded(
-                  child: DrawerHeader(
-                    child: Text('Hello'),
+                  // child: DrawerHeader(
+                  //   child: Text('Hello'),
+                  //   decoration: BoxDecoration(
+                  //     color: Colors.yellow,
+                  //     image: DecorationImage(
+                  //       image: NetworkImage('https://bkimg.cdn.bcebos.com/pic/faedab64034f78f0ed0278c77c310a55b3191cfc?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg'),
+                  //       fit: BoxFit.cover
+                  //     )
+                  //   ),
+                  // ),
+                  child: UserAccountsDrawerHeader(
+                    accountName: Text('Zmj'),
+                    accountEmail: Text('292570927@qq.com'),
+                    currentAccountPicture: CircleAvatar(
+                      backgroundImage: NetworkImage('https://bkimg.cdn.bcebos.com/pic/faedab64034f78f0ed0278c77c310a55b3191cfc?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg'),
+                    ),
+                    otherAccountsPictures: [
+                      Image.network('https://www.itying.com/images/flutter/2.png'),
+                      Image.network('https://www.itying.com/images/flutter/2.png'),
+                    ],
                     decoration: BoxDecoration(
-                      color: Colors.yellow,
                       image: DecorationImage(
                         image: NetworkImage('https://bkimg.cdn.bcebos.com/pic/faedab64034f78f0ed0278c77c310a55b3191cfc?x-bce-process=image/resize,m_lfit,w_268,limit_1/format,f_jpg'),
                         fit: BoxFit.cover
