@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/pages/CategoryPage.dart';
 import 'package:flutter_app_androidx/pages/HomePage.dart';
@@ -135,12 +136,25 @@ class _TabsState extends State<Tabs> {
         )
       ),
       endDrawer: Text('rightDrawer'),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add, color: Colors.white, size: 30,),
-        onPressed: (){
-          print('clickedFAB');
-        },
-        backgroundColor: Colors.blue,
+      floatingActionButton: Container(
+        height: 80,
+        width: 80,
+        padding: EdgeInsets.all(10),
+        margin: EdgeInsets.only(top: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(40),
+          color: Colors.white,
+        ),
+        child: FloatingActionButton(
+          child: Icon(Icons.add, color: Colors.white, size: 30,),
+          onPressed: (){
+            print('clickedFAB');
+            setState(() {
+              this._currentIndex = 1;
+            });
+          },
+          backgroundColor: this._currentIndex == 1 ? Colors.blue : Colors.grey,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
