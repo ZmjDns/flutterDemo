@@ -15,7 +15,11 @@ class FormPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(this.title),
       ),
-      body: TextFields(),
+      body: ListView(
+        children: [
+          TextFields()
+        ],
+      ),
     );
   }
 }
@@ -27,6 +31,14 @@ class TextFields extends StatefulWidget {
 }
 
 class _TextFieldsState extends State<TextFields> {
+
+  var userName = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    this.userName.text = '初始值';
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,19 +74,36 @@ class _TextFieldsState extends State<TextFields> {
           SizedBox(height: 10,),
           TextField(
             decoration: InputDecoration(
+                icon: Icon(Icons.people),
                 hintText: '用户',
                 labelText: '用户名',
                 border: OutlineInputBorder()
             ),
+            controller: userName,
+            // onChanged: (value){
+            //   this.userName.text = value;
+            // },
           ),
           SizedBox(height: 10,),
           TextField(
             obscureText: true,
             decoration: InputDecoration(
-                icon: Icon(Icons.people),
+                icon: Icon(Icons.admin_panel_settings),
                 hintText: '密码',
                 labelText: '密码',
                 border: OutlineInputBorder()
+            ),
+          ),
+          SizedBox(height: 10,),
+          Container(
+            width: double.infinity,
+            child: RaisedButton(
+              child: Text('登录'),
+              onPressed: (){
+                print(this.userName.text);
+              },
+              color: Colors.blue,
+              textColor: Colors.white,
             ),
           )
         ],
