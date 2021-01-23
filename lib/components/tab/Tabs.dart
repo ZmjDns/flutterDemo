@@ -135,6 +135,14 @@ class _TabsState extends State<Tabs> {
         )
       ),
       endDrawer: Text('rightDrawer'),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add, color: Colors.white, size: 30,),
+        onPressed: (){
+          print('clickedFAB');
+        },
+        backgroundColor: Colors.blue,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
