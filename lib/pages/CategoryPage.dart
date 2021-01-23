@@ -54,6 +54,12 @@ class _CategoryPageState extends State<CategoryPage> {
                   },
                 ),
                 RaisedButton(
+                  child: Text('单选多选框'),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/checkBoxRadioBtn');
+                  },
+                ),
+                RaisedButton(
                   child: Text('点击注册'),
                   onPressed: (){
                     Navigator.pushNamed(context, '/register');

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 import 'package:flutter_app_androidx/pages/AppBarPage.dart';
+import 'package:flutter_app_androidx/pages/CheckBoxRadioBtnPage.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
@@ -24,6 +25,7 @@ final routes = {
   '/topTab': (context) => TopTabPage(),
   '/tabBarController': (context) => TabBarControllerPage(),
   '/userCenter': (context) => UserCenter(),
+  '/checkBoxRadioBtn': (context) => CheckBoxRadioBtnPage(),
 };
 
 // 统一命名路由跳转
