@@ -59,6 +59,13 @@ class _CategoryPageState extends State<CategoryPage> {
                     Navigator.pushNamed(context, '/checkBoxRadioBtn');
                   },
                 ),
+                SizedBox(height: 10,),
+                RaisedButton(
+                  child: Text('Form练习'),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/formExercise');
+                  },
+                ),
                 RaisedButton(
                   child: Text('点击注册'),
                   onPressed: (){

@@ -12,6 +12,8 @@ class _CheckBoxRadioBtnPageState extends State<CheckBoxRadioBtnPage> {
 
   var sex = 1;
 
+  var isOpen = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,6 +106,7 @@ class _CheckBoxRadioBtnPageState extends State<CheckBoxRadioBtnPage> {
               title: Text('标题'),
               subtitle: Text('二级标题'),
               secondary: Icon(Icons.height),
+              selected: this.sex == 1,  //选中状态、一级二级标题Icon都变为选中颜色
             ),
             SizedBox(height: 10,),
             RadioListTile(
@@ -117,6 +120,20 @@ class _CheckBoxRadioBtnPageState extends State<CheckBoxRadioBtnPage> {
               title: Text('标题'),
               subtitle: Text('二级标题'),
               secondary: Icon(Icons.height),
+              selected: this.sex == 2,
+            ),
+            SizedBox(height: 10,),
+
+
+
+            //switch开关
+            Switch(
+              value: this.isOpen,
+              onChanged: (v){
+                setState(() {
+                  this.isOpen = v;
+                });
+              },
             )
           ],
         ),

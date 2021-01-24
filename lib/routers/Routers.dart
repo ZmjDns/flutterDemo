@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 import 'package:flutter_app_androidx/pages/AppBarPage.dart';
 import 'package:flutter_app_androidx/pages/CheckBoxRadioBtnPage.dart';
+import 'package:flutter_app_androidx/pages/FormExercise.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
@@ -26,6 +27,8 @@ final routes = {
   '/tabBarController': (context) => TabBarControllerPage(),
   '/userCenter': (context) => UserCenter(),
   '/checkBoxRadioBtn': (context) => CheckBoxRadioBtnPage(),
+  '/formExercise': (context) => FormExercise(),
+
 };
 
 // 统一命名路由跳转
