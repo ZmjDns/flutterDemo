@@ -9,6 +9,9 @@ class CheckBoxRadioBtnPage extends StatefulWidget {
 class _CheckBoxRadioBtnPageState extends State<CheckBoxRadioBtnPage> {
 
   var isChecked = false;
+
+  var sex = 1;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +60,63 @@ class _CheckBoxRadioBtnPageState extends State<CheckBoxRadioBtnPage> {
               title: Text('标题'),
               subtitle: Text('二级标题'),
               secondary: Icon(Icons.help),
+            ),
+
+            // RadioBtn
+            Row(
+              children: [
+                Text('男'),
+                Radio(
+                  value: 1,
+                  onChanged: (v){
+                    setState(() {
+                      this.sex = v;
+                    });
+                  },
+                  groupValue: this.sex,
+                ),
+                SizedBox(width: 20,),
+                Text('女'),
+                Radio(
+                  value: 2,
+                  onChanged: (v){
+                    setState(() {
+                      this.sex = v;
+                    });
+                  },
+                  groupValue: this.sex,
+                ),
+                SizedBox(width: 20,),
+                Text('${this.sex} ${this.sex == 1 ? '男' : '女'}')
+              ],
+            ),
+
+            // RadioListTile
+            SizedBox(height: 10,),
+            RadioListTile(
+              value: 1,
+              onChanged: (v){
+                setState(() {
+                  this.sex = v;
+                });
+              },
+              groupValue: this.sex,
+              title: Text('标题'),
+              subtitle: Text('二级标题'),
+              secondary: Icon(Icons.height),
+            ),
+            SizedBox(height: 10,),
+            RadioListTile(
+              value: 2,
+              onChanged: (v){
+                setState(() {
+                  this.sex = v;
+                });
+              },
+              groupValue: this.sex,
+              title: Text('标题'),
+              subtitle: Text('二级标题'),
+              secondary: Icon(Icons.height),
             )
           ],
         ),
