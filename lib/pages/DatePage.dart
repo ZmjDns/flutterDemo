@@ -10,9 +10,12 @@ class _DatePageState extends State<DatePage> {
 
   var now = DateTime.now();
 
+  var formatDateStr = formatDate(DateTime.now(), [yyyy, '-', mm, '-', dd]);
+
   @override
   void initState() {
     super.initState();
+    //  日期转换
     print('当前日期：$now');
     print('当前时间戳：${now.millisecondsSinceEpoch}');
     print('转换时间戳：${DateTime.fromMillisecondsSinceEpoch(1611580958098)}');
@@ -41,6 +44,9 @@ class _DatePageState extends State<DatePage> {
       lastDate: DateTime(2100)
     );
     print(result);
+    setState(() {
+      this.formatDateStr = formatDate(result, [yyyy, '-', mm, '-', dd]);
+    });
   }
 
   @override
@@ -56,7 +62,7 @@ class _DatePageState extends State<DatePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('2020-01-25'),
+                Text(this.formatDateStr),
                 Icon(Icons.arrow_drop_down)
               ],
             ),
