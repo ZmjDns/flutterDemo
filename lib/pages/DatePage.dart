@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:date_format/date_format.dart';
 
@@ -11,6 +12,7 @@ class _DatePageState extends State<DatePage> {
   var now = DateTime.now();
 
   var formatDateStr = formatDate(DateTime.now(), [yyyy, '-', mm, '-', dd]);
+  var timeStr = TimeOfDay(hour: 12, minute: 20);
 
   @override
   void initState() {
@@ -49,6 +51,23 @@ class _DatePageState extends State<DatePage> {
     });
   }
 
+  //  显示时间
+  _showTimePicker () {
+    showTimePicker(
+      context: context,
+      initialTime: TimeOfDay(hour: 12, minute: 20)
+    ).then((value) => {
+      print(value)
+    });
+  }
+  _showTimePickerAsync () async {
+    var result = await showTimePicker(context: context, initialTime: this.timeStr);
+    print(result);
+    setState(() {
+      this.timeStr = result;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,20 +77,40 @@ class _DatePageState extends State<DatePage> {
       body:Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          InkWell(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(this.formatDateStr),
-                Icon(Icons.arrow_drop_down)
-              ],
-            ),
-            onTap: (){
-              print('打开日期组件');
-              //this._showDatePicker();
-              this._showDatePickerAsync();
-            },
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              InkWell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(this.formatDateStr),
+                    Icon(Icons.arrow_drop_down)
+                  ],
+                ),
+                onTap: (){
+                  print('打开日期组件');
+                  //this._showDatePicker();
+                  this._showDatePickerAsync();
+                },
+              ),
+
+              //  时间选择
+              InkWell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('${this.timeStr.format(context)}'),
+                    Icon(Icons.arrow_drop_down)
+                  ],
+                ),
+                onTap: () {
+                  this._showTimePickerAsync();
+                },
+              )
+            ],
           )
+
         ],
       ),
     );
