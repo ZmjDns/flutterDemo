@@ -67,6 +67,12 @@ class _CategoryPageState extends State<CategoryPage> {
                   },
                 ),
                 RaisedButton(
+                  child: Text('日期组件'),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/datePage');
+                  },
+                ),
+                RaisedButton(
                   child: Text('点击注册'),
                   onPressed: (){
                     Navigator.pushNamed(context, '/register');

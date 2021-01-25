@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 import 'package:flutter_app_androidx/pages/AppBarPage.dart';
 import 'package:flutter_app_androidx/pages/CheckBoxRadioBtnPage.dart';
+import 'package:flutter_app_androidx/pages/DatePage.dart';
 import 'package:flutter_app_androidx/pages/FormExercise.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
@@ -28,6 +29,7 @@ final routes = {
   '/userCenter': (context) => UserCenter(),
   '/checkBoxRadioBtn': (context) => CheckBoxRadioBtnPage(),
   '/formExercise': (context) => FormExercise(),
+  '/datePage': (context) => DatePage(),
 
 };
 
