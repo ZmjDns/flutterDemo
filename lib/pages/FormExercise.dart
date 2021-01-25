@@ -9,6 +9,7 @@ class FormExercise extends StatefulWidget {
 class _FormExerciseState extends State<FormExercise> {
 
   var name = TextEditingController();
+  String info = '';
   var sex = 1;
 
   // @override
@@ -22,6 +23,46 @@ class _FormExerciseState extends State<FormExercise> {
       this.sex = value;
     });
   }
+
+  //爱好
+  var hobbyList = [
+    {
+      'checked': true,
+      'title': '吃饭'
+    },
+    {
+      'checked': true,
+      'title': '睡觉'
+    },
+    {
+      'checked': true,
+      'title': '撸码'
+    }
+  ];
+
+  List<Widget> _getHobbyWidget () {
+    List<Widget> tempList = [];
+    for(var i = 0; i < this.hobbyList.length; i++) {
+      tempList.add(
+        Row(
+          children: [
+            Text(this.hobbyList[i]['title']),
+            Checkbox(
+              value: this.hobbyList[i]['checked'],
+              onChanged: (v) {
+                setState(() {
+                  this.hobbyList[i]['checked'] = v;
+                });
+              }
+            )
+          ],
+        )
+      );
+    }
+    return tempList;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +89,26 @@ class _FormExerciseState extends State<FormExercise> {
                 Radio(value: 2, groupValue: this.sex, onChanged: this._sexChanged)
               ],
             ),
+
+            // 爱好
+            Column(
+              children: this._getHobbyWidget(),
+            ),
+
+            // 输入框
+            TextField(
+              maxLines: 4,
+              decoration: InputDecoration(
+                hintText: '描述信息',
+                border: OutlineInputBorder()
+              ),
+              onChanged: (v){
+                setState(() {
+                  this.info = v;
+                });
+              },
+            ),
+
             Container(
               width: double.infinity,
               height: 40,
@@ -56,6 +117,7 @@ class _FormExerciseState extends State<FormExercise> {
                 onPressed: (){
                   print(this.name.text);
                   print(this.sex);
+                  print(this.hobbyList);
                 },
               ),
             )
