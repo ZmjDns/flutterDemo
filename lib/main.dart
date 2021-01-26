@@ -11,6 +11,7 @@ import 'package:flutter_app_androidx/components/stateful/homePage.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
 import 'package:flutter_app_androidx/routers/Routers.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'components/WrapLayoutComps.dart';
 import 'components/tab/Tabs.dart';
@@ -40,6 +41,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      //  汉化
+      localizationsDelegates: [
+        //此处
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        //此处
+        const Locale('zh', 'CH'),
+        const Locale('en', 'US'),
+      ],
+
       debugShowCheckedModeBanner: false,  // 去掉右上角debug标签
       // home: Tabs(),
       // initialRoute: '/',  //初始化加载的路由，抽离Tabs
