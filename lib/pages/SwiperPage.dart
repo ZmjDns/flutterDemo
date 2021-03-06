@@ -17,14 +17,29 @@ class _SwiperPageState extends State<SwiperPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(title: Text('轮播图'),),
-      body: new Swiper(
-        itemBuilder: (BuildContext context,int index){
-          return new Image.network(imgList[index]['url'],fit: BoxFit.fill,);
-        },
-        itemCount: imgList.length,
-        pagination: new SwiperPagination(), //分页
-        control: new SwiperControl(), //  滑动箭头
-      ),
+      body: Column(
+        children: [
+          Container(
+            height: 200,
+            child: AspectRatio(
+              aspectRatio: 16/9,
+              child: new Swiper(
+                itemBuilder: (BuildContext context,int index){
+                return new Image.network(imgList[index]['url'],fit: BoxFit.fill,);
+                },
+                  itemCount: imgList.length,
+                  pagination: new SwiperPagination(), //分页
+                  control: new SwiperControl(), //  滑动箭头
+                ),
+            ),
+          ),
+          Row(
+            children: [
+              Text('我是文字'),
+            ],
+          )
+        ],
+      )
     );
   }
 }
