@@ -38,6 +38,13 @@ class _DialogsPageState extends State<DialogsPage> {
             _simpleDialog();
           },
         ),
+        RaisedButton(
+          child: Text('BottomSheetDialog'),
+          onPressed: (){
+            print('点击BottomSheetDialog');
+            _bottomSheetDialog();
+          },
+        )
       ],
     );
   }
@@ -120,6 +127,47 @@ class _DialogsPageState extends State<DialogsPage> {
             ),
             Divider(),
           ],
+        );
+      }
+    );
+
+    print('回调数据：$result');
+  }
+
+  _bottomSheetDialog() async {
+    var result = await showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 220,
+          child: Column(
+            children: [
+              ListTile(
+                title: Text('title'),
+                trailing: Text('trailing'),
+                onTap: () {
+                  Navigator.pop(context, 'title');
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text('A'),
+                trailing: Text('A'),
+                onTap: () {
+                  Navigator.pop(context, 'A');
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text('B'),
+                trailing: Text('B'),
+                onTap: () {
+                  Navigator.pop(context, 'B');
+                },
+              ),
+              Divider(),
+            ],
+          ),
         );
       }
     );
