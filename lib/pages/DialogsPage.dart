@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class DialogsPage extends StatefulWidget {
   @override
@@ -44,7 +45,21 @@ class _DialogsPageState extends State<DialogsPage> {
             print('点击BottomSheetDialog');
             _bottomSheetDialog();
           },
-        )
+        ),
+        RaisedButton(
+          child: Text('showToast'),
+          onPressed: (){
+            Fluttertoast.showToast(
+                msg: "This is Center Short Toast",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0
+            );
+          },
+        ),
       ],
     );
   }
