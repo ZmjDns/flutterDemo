@@ -30,7 +30,14 @@ class _DialogsPageState extends State<DialogsPage> {
             print('点击');
             _alertDialog();
           },
-        )
+        ),
+        RaisedButton(
+          child: Text('SimpleDialog'),
+          onPressed: (){
+            print('点击SimpleDialog');
+            _simpleDialog();
+          },
+        ),
       ],
     );
   }
@@ -77,5 +84,43 @@ class _DialogsPageState extends State<DialogsPage> {
    );
 
    print('回调数据：$result');
+  }
+
+  //simpleDialog
+  _simpleDialog () {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return SimpleDialog(
+          title: Text('SimpleDialog,select content'),
+          children: [
+            SimpleDialogOption(
+              child: Text('Option A'),
+              onPressed: (){
+                print('Option A');
+                Navigator.pop(context);
+              },
+            ),
+            Divider(),
+            SimpleDialogOption(
+              child: Text('Option B'),
+              onPressed: (){
+                print('Option B');
+                Navigator.pop(context);
+              },
+            ),
+            Divider(),
+            SimpleDialogOption(
+              child: Text('Option C'),
+              onPressed: (){
+                print('Option C');
+                Navigator.pop(context);
+              },
+            ),
+            Divider(),
+          ],
+        );
+      }
+    );
   }
 }
