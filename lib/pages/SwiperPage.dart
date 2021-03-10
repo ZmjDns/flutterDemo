@@ -16,12 +16,13 @@ class _SwiperPageState extends State<SwiperPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(title: Text('轮播图'),),
+      appBar: AppBar(title: Text('轮播图'),),
       body: Column(
         children: [
           Container(
-            height: 200,
-            child: AspectRatio(
+            // height: 200, //(去掉高度)
+            width: double.infinity,//(实现宽度100%平铺)
+            child: AspectRatio( //  限定比例
               aspectRatio: 16/9,
               child: new Swiper(
                 itemBuilder: (BuildContext context,int index){
