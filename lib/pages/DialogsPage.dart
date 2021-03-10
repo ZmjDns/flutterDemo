@@ -87,7 +87,8 @@ class _DialogsPageState extends State<DialogsPage> {
   }
 
   //simpleDialog
-  _simpleDialog () {
+  _simpleDialog () async {
+    var result = await
     showDialog(
       context: context,
       builder: (context) {
@@ -98,7 +99,7 @@ class _DialogsPageState extends State<DialogsPage> {
               child: Text('Option A'),
               onPressed: (){
                 print('Option A');
-                Navigator.pop(context);
+                Navigator.pop(context, 'A');
               },
             ),
             Divider(),
@@ -106,7 +107,7 @@ class _DialogsPageState extends State<DialogsPage> {
               child: Text('Option B'),
               onPressed: (){
                 print('Option B');
-                Navigator.pop(context);
+                Navigator.pop(context, 'B');
               },
             ),
             Divider(),
@@ -114,7 +115,7 @@ class _DialogsPageState extends State<DialogsPage> {
               child: Text('Option C'),
               onPressed: (){
                 print('Option C');
-                Navigator.pop(context);
+                Navigator.pop(context, 'C');
               },
             ),
             Divider(),
@@ -122,5 +123,7 @@ class _DialogsPageState extends State<DialogsPage> {
         );
       }
     );
+
+    print('回调数据：$result');
   }
 }
