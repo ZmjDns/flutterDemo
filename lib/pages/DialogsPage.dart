@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_androidx/components/MyDialog.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class DialogsPage extends StatefulWidget {
@@ -57,6 +58,17 @@ class _DialogsPageState extends State<DialogsPage> {
                 backgroundColor: Colors.red,
                 textColor: Colors.white,
                 fontSize: 16.0
+            );
+          },
+        ),
+        RaisedButton(
+          child: Text('自定义Dialog'),
+          onPressed: (){
+            showDialog(
+              context: context,
+              builder: (context) {
+                return MyDialog();
+              }
             );
           },
         ),
