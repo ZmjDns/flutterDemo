@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class MyDialog extends Dialog {
+  String title;
+  String content;
+
+  MyDialog({this.title,this.content});
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -20,7 +25,7 @@ class MyDialog extends Dialog {
                     children: [
                       Align(
                         alignment: Alignment.center,
-                        child: Text('About Us'),
+                        child: Text('${this.title}'),
                       ),
                       Align(
                         alignment: Alignment.topRight,
@@ -38,7 +43,7 @@ class MyDialog extends Dialog {
               Container(
                 width: double.infinity,
                 padding: EdgeInsets.all(10),
-                child: Text('我是内容', textAlign: TextAlign.start,),
+                child: Text('${this.content}', textAlign: TextAlign.start,),
               ),
             ],
           ),

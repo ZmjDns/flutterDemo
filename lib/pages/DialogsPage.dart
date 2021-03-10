@@ -67,7 +67,7 @@ class _DialogsPageState extends State<DialogsPage> {
             showDialog(
               context: context,
               builder: (context) {
-                return MyDialog();
+                return MyDialog(title: 'title', content: 'content');
               }
             );
           },
