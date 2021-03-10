@@ -35,7 +35,7 @@ class _DialogsPageState extends State<DialogsPage> {
     );
   }
 
-  _alertDialog () {
+  _alertDialog () async {
     // 原生dialog铺满全屏 不好看需要自定义
     // showDialog(
     //   context: context,
@@ -46,7 +46,7 @@ class _DialogsPageState extends State<DialogsPage> {
     //     );
     //   }
     // );
-   showDialog(
+   var result = await showDialog(
      context: context,
      builder: (context){
        return AlertDialog(
@@ -57,8 +57,9 @@ class _DialogsPageState extends State<DialogsPage> {
              child: Text('确定'),
              onPressed: (){
                print('确定');
-               // 关闭AlertDialog
-               Navigator.pop(context);
+               // 关闭AlertDialog,并且可以回传数据
+               // Navigator.pop(context);
+               Navigator.pop(context, 'Conform');
              },
            ),
            RaisedButton(
@@ -66,12 +67,15 @@ class _DialogsPageState extends State<DialogsPage> {
              onPressed: (){
                print('取消');
                // 关闭AlertDialog
-               Navigator.pop(context);
+               // Navigator.pop(context);
+               Navigator.pop(context, 'Cancel');
              },
            )
          ],
        );
      }
    );
+
+   print('回调数据：$result');
   }
 }
