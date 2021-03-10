@@ -14,9 +14,64 @@ class _DialogsPageState extends State<DialogsPage> {
       ),
       body: Column(
         children: [
-          Text('dialog')
+          Text('dialog'),
+          _dialogWidgets(),
         ],
       ),
     );
+  }
+
+  Widget _dialogWidgets () {
+    return Column(
+      children: [
+        RaisedButton(
+          child: Text('nativeDialog'),
+          onPressed: (){
+            print('点击');
+            _alertDialog();
+          },
+        )
+      ],
+    );
+  }
+
+  _alertDialog () {
+    // 原生dialog铺满全屏 不好看需要自定义
+    // showDialog(
+    //   context: context,
+    //   builder: (context){
+    //     return Container(
+    //       height: 100,
+    //       color: Colors.blue,
+    //     );
+    //   }
+    // );
+   showDialog(
+     context: context,
+     builder: (context){
+       return AlertDialog(
+         title: Text('AlertDialog'),
+         content: Text('I am content of AlertDialog'),
+         actions: [
+           FlatButton(
+             child: Text('确定'),
+             onPressed: (){
+               print('确定');
+               // 关闭AlertDialog
+               Navigator.pop(context);
+             },
+           ),
+           RaisedButton(
+             child: Text('取消'),
+             onPressed: (){
+               print('取消');
+               // 关闭AlertDialog
+               Navigator.pop(context);
+             },
+           )
+         ],
+       );
+     }
+   );
   }
 }
