@@ -83,6 +83,12 @@ class _CategoryPageState extends State<CategoryPage> {
                   onPressed: (){
                     Navigator.pushNamed(context, '/register');
                   },
+                ),
+                RaisedButton(
+                  child: Text('各种弹窗'),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/dialogsPage');
+                  },
                 )
               ],
             ),
