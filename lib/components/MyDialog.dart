@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -8,8 +10,22 @@ class MyDialog extends Dialog {
 
   MyDialog({this.title,this.content});
 
+  //  定时关闭Dialog
+  _showTimer(context) {
+    var timer;
+    timer = Timer.periodic(
+      Duration(milliseconds: 3000),(t) {
+        Navigator.pop(context);
+        t.cancel();
+      }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    //  定时
+    _showTimer(context);
+
     return Material(
       type: MaterialType.transparency,
       child: Center(
