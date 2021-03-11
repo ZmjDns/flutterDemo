@@ -7,6 +7,7 @@ import 'package:flutter_app_androidx/pages/DatePage.dart';
 import 'package:flutter_app_androidx/pages/DialogsPage.dart';
 import 'package:flutter_app_androidx/pages/FormExercise.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
+import 'package:flutter_app_androidx/pages/JsonPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
@@ -34,6 +35,7 @@ final routes = {
   '/datePage': (context) => DatePage(),
   '/swiperPage': (context) => SwiperPage(),
   '/dialogsPage': (context) => DialogsPage(),
+  '/JsonPage': (context) => JsonPage(),
 
 };
 

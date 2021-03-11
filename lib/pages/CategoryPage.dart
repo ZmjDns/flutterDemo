@@ -89,6 +89,12 @@ class _CategoryPageState extends State<CategoryPage> {
                   onPressed: (){
                     Navigator.pushNamed(context, '/dialogsPage');
                   },
+                ),
+                RaisedButton(
+                  child: Text('JSON数据处理'),
+                  onPressed: (){
+                    Navigator.pushNamed(context, '/JsonPage');
+                  },
                 )
               ],
             ),
