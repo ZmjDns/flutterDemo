@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 
@@ -8,6 +9,8 @@ class JsonPage extends StatefulWidget {
 }
 
 class _JsonPageState extends State<JsonPage> {
+
+  List _list= [];
 
   @override
   void initState() {
@@ -35,11 +38,41 @@ class _JsonPageState extends State<JsonPage> {
       appBar: AppBar(
         title: Text('JSONPage'),
       ),
-      body: Column(
-        children: [
-          Text('JSONPage')
-        ],
-      ),
+      body: _pageWidgets(),
     );
+  }
+
+  _pageWidgets() {
+    return Column(
+      children: [
+        RaisedButton(
+          child: Text('Get请求'),
+          onPressed: (){
+            _getNetData();
+          },
+        ),
+        this._list.length > 0 ? ListView(
+            shrinkWrap: true,
+            children: this._list.map((e){
+              return ListTile(
+                title: Text(e['title']),
+              );
+            }).toList()
+        ) : Text('正在加载....'),
+      ],
+    );
+  }
+
+  _getNetData() async {
+    var api = 'http://a.itying.com/api/productlist';
+    var response = await http.get(api);
+    if (response.statusCode == 200) {
+      setState(() {
+        this._list = json.decode(response.body)['result'];
+        print(_list is List);
+      });
+    } else {
+      print(response.statusCode);
+    }
   }
 }
