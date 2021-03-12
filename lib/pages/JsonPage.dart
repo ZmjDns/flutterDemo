@@ -51,13 +51,22 @@ class _JsonPageState extends State<JsonPage> {
             _getNetData();
           },
         ),
-        this._list.length > 0 ? ListView(
-            shrinkWrap: true,
-            children: this._list.map((e){
-              return ListTile(
-                title: Text(e['title']),
-              );
-            }).toList()
+        // this._list.length > 0 ? ListView(
+        //     shrinkWrap: true,
+        //     children: this._list.map((e){
+        //       return ListTile(
+        //         title: Text(e['title']),
+        //       );
+        //     }).toList()
+        // ) : Text('正在加载....'),
+        this._list.length > 0 ? ListView.builder(
+          itemCount: this._list.length,
+          shrinkWrap: true,
+          itemBuilder: (context,index){
+            return ListTile(
+              title: Text(this._list[index]['title']),
+            );
+          },
         ) : Text('正在加载....'),
       ],
     );
