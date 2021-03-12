@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
@@ -48,7 +49,8 @@ class _JsonPageState extends State<JsonPage> {
         RaisedButton(
           child: Text('Get请求'),
           onPressed: (){
-            _getNetData();
+            // _getNetData();
+            _getNetDataByDio();
           },
         ),
         // this._list.length > 0 ? ListView(
@@ -59,14 +61,17 @@ class _JsonPageState extends State<JsonPage> {
         //       );
         //     }).toList()
         // ) : Text('正在加载....'),
-        this._list.length > 0 ? ListView.builder(
-          itemCount: this._list.length,
-          shrinkWrap: true,
-          itemBuilder: (context,index){
-            return ListTile(
-              title: Text(this._list[index]['title']),
-            );
-          },
+        this._list.length > 0 ? Container(
+          height: 400,
+          child: ListView.builder(
+            itemCount: this._list.length,
+            shrinkWrap: true,
+            itemBuilder: (context,index){
+              return ListTile(
+                title: Text(this._list[index]['title']),
+              );
+            },
+          ),
         ) : Text('正在加载....'),
       ],
     );
@@ -83,5 +88,14 @@ class _JsonPageState extends State<JsonPage> {
     } else {
       print(response.statusCode);
     }
+  }
+  _getNetDataByDio() async {
+    var api = 'http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1';//'http://a.itying.com/api/productlist';
+    var response = await Dio().get(api);
+    print(response.data is String);
+    print(response.data);
+    setState(() {
+      this._list = json.decode(response.data)['result'];
+    });
   }
 }
