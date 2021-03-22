@@ -18,6 +18,7 @@ class _MyRefreshPageState extends State<MyRefreshPage> {
   @override
   void initState() {
     super.initState();
+    print('_MyRefreshPageState。。。。。。。。。。。。。。');
     _getData();
     _scrollController.addListener(() {  //会出现滑动一次调用接口多次的情况
       // print('滑动距离${_scrollController.position.pixels}-------->最大距离 ${_scrollController.position.maxScrollExtent}');
@@ -50,6 +51,7 @@ class _MyRefreshPageState extends State<MyRefreshPage> {
               children: [
                 ListTile(
                   title: Text('${index}->${_list[index]['title']}'),
+                  subtitle: Text(_list[index]['dateline']),
                 ),
                 Divider(),
                 _loadMore()
@@ -58,6 +60,11 @@ class _MyRefreshPageState extends State<MyRefreshPage> {
           } else {
             return ListTile(
               title: Text(_list[index]['title']),
+              subtitle: Text(_list[index]['dateline']),
+              onTap: () {
+                print('点击了${_list[index]}');
+              },
+
             );
           }
         },
