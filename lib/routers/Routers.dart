@@ -8,8 +8,11 @@ import 'package:flutter_app_androidx/pages/DialogsPage.dart';
 import 'package:flutter_app_androidx/pages/FormExercise.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 import 'package:flutter_app_androidx/pages/JsonPage.dart';
+import 'package:flutter_app_androidx/pages/MyRefreshPage.dart';
+import 'package:flutter_app_androidx/pages/NewsContentPage.dart';
 import 'package:flutter_app_androidx/pages/ProductDetailPage.dart';
 import 'package:flutter_app_androidx/pages/ProductPage.dart';
+import 'package:flutter_app_androidx/pages/PullRefershPage.dart';
 import 'package:flutter_app_androidx/pages/SearchPage.dart';
 import 'package:flutter_app_androidx/pages/SwiperPage.dart';
 import 'package:flutter_app_androidx/pages/TabBarControllerPage.dart';
@@ -36,6 +39,9 @@ final routes = {
   '/swiperPage': (context) => SwiperPage(),
   '/dialogsPage': (context) => DialogsPage(),
   '/JsonPage': (context) => JsonPage(),
+  '/pullRefreshPage': (context) => HttpDemo(),
+  '/myRefreshPage': (context) => MyRefreshPage(),
+  '/newsContentPage': (context,{arguments}) => NewsContentPage(arguments: arguments,),
 
 };
 

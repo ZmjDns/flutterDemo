@@ -63,6 +63,7 @@ class _MyRefreshPageState extends State<MyRefreshPage> {
               subtitle: Text(_list[index]['dateline']),
               onTap: () {
                 print('点击了${_list[index]}');
+                Navigator.pushNamed(context, '/newsContentPage',arguments: _list[index]);
               },
 
             );
