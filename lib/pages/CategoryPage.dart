@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app_androidx/components/PullRefresh.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 import 'package:flutter_app_androidx/pages/FormPage.dart';
 
@@ -101,7 +104,7 @@ class _CategoryPageState extends State<CategoryPage> {
             ListView(
               children: [
                 ListTile(
-                  title: Text('secondTab'),
+                  title: PullRefresh(), //  推荐tab 有问题
                 )
               ],
             ),
@@ -122,6 +125,53 @@ class _CategoryPageState extends State<CategoryPage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget recommend () {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        RefreshIndicator(
+          onRefresh: () async {
+            await Future.delayed(Duration(seconds: 3));
+            return Future.value(true);
+          },
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              ListTile(
+                title: Text('cakmckmaisomciaosicma'),
+              ),
+              ListTile(
+                title: Text('cakmckmaisomciaosicma'),
+              ),
+              ListTile(
+                title: Text('cakmckmaisomciaosicma'),
+              ),
+              ListTile(
+                title: Text('cakmckmaisomciaosicma'),
+              ),
+              ListTile(
+                title: Text('cakmckmaisomciaosicma'),
+              ),
+              ListTile(
+                title: Text('cakmckmaisomciaosicma'),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  void _onRefresh () async {
+    await Future.delayed(
+      Duration(seconds: 3),
+        () {
+        print('kkkkkkkkkkkkkkkkkkkkkkkkkkkk');
+        return 'cxascas';
+        }
     );
   }
 }
