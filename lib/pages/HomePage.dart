@@ -57,8 +57,8 @@ class _HomePageState extends State<HomePage> {
           RaisedButton(
             child: Text('PullRefreshPage'),
             onPressed: (){
-              Navigator.pushNamed(context, '/pullRefreshPage');
-              // Navigator.pushNamed(context, '/myRefreshPage');
+              // Navigator.pushNamed(context, '/pullRefreshPage');
+              Navigator.pushNamed(context, '/myRefreshPage');
             },
           )
         ],

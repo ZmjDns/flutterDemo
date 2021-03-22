@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,  // 去掉右上角debug标签
       // home: Tabs(),
-      // initialRoute: '/',  //初始化加载的路由，抽离Tabs
-      initialRoute: '/appBar',
+      initialRoute: '/',  //初始化加载的路由，抽离Tabs
+      // initialRoute: '/appBar',
       theme: ThemeData(
         primarySwatch: Colors.yellow  //  app主题颜色
       ),
