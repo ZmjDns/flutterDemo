@@ -36,6 +36,7 @@ dependencies:
   fluttertoast: ^7.1.8
   http: 0.12.2
   dio: ^3.0.10
+  flutter_html: ^1.2.0
 
 dev_dependencies:
   flutter_test:
