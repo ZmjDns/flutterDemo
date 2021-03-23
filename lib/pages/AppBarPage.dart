@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AppBarPage extends StatefulWidget {
   @override
@@ -9,6 +12,9 @@ class AppBarPage extends StatefulWidget {
 class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateMixin {
 
   TabController _tabController;
+
+  File _image;
+  final picker = ImagePicker();
 
   @override
   void initState() {
@@ -49,7 +55,21 @@ class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateM
         controller: _tabController,
         children: [
           Center(
-            child: Text('111111'),
+            child: Column(
+              children: [
+                Center(
+                  child: _image == null
+                      ? Text('No image selected.')
+                      : Image.file(_image),
+                ),
+                RaisedButton(
+                  child: Text('打开相机'),
+                  onPressed: (){
+                    getImage();
+                  },
+                )
+              ],
+            ),
           ),
           Center(
             child: Text('22222'),
@@ -69,6 +89,18 @@ class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateM
         ],
       ),
     );
+  }
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.camera);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
   }
 
   @override
