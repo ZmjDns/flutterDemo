@@ -71,10 +71,6 @@ class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateM
     );
   }
 
-  Widget _bottomTab () {
-    return
-  }
-
   @override
   void dispose() {
     super.dispose();
