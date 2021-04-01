@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_app_androidx/components/tab/Tabs.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -60,12 +62,12 @@ class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateM
                 Center(
                   child: _image == null
                       ? Text('No image selected.')
-                      : Image.file(_image),
+                      : Image.file(_image,width: 200, height: 200,fit: BoxFit.cover,),
                 ),
                 RaisedButton(
                   child: Text('打开相机'),
                   onPressed: (){
-                    getImage();
+                    _showBottomSheet();
                   },
                 )
               ],
@@ -91,8 +93,46 @@ class _AppBarPageState extends State<AppBarPage> with SingleTickerProviderStateM
     );
   }
 
-  Future getImage() async {
-    final pickedFile = await picker.getImage(source: ImageSource.camera);
+  _showBottomSheet() async {
+    await showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 200,
+          child: Column(
+            children: [
+              ListTile(
+                title: Text('相册',textAlign: TextAlign.center,),
+                onTap: () {
+                  Navigator.pop(context);
+                  print('---------------------相册------------------');
+                  getImage(1);
+                },
+              ),
+              Divider(),
+              ListTile(
+                title: Text('相机',textAlign: TextAlign.center,),
+                onTap: () {
+                  Navigator.pop(context);
+                  print('---------------------相机------------------');
+                  getImage(0);
+                },
+              )
+            ],
+          ),
+        );
+      }
+    );
+  }
+
+  Future getImage(type) async {
+    var pickedFile;
+    if(type == 1) {
+      pickedFile = await picker.getImage(source: ImageSource.gallery);
+    }else {
+      pickedFile = await picker.getImage(source: ImageSource.camera);
+    }
+    // final pickedFile = await picker.getImage(source: ImageSource.gallery);
 
     setState(() {
       if (pickedFile != null) {
